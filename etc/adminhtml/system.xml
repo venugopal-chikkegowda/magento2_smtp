@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Codilar Technologies Pvt. Ltd.
+ * @category    Codilar_Smtp Extension
+ * @package    Codilar\Smtp\etc\adminhtml
+ * @copyright   Copyright (c) 2017 Codilar. (http://www.codilar.com)
+ * @purpose      For creating configuration for our Smtp Module
+ * @author       Codilar Team
+ **/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <!-- Add new Tab -->
+        <tab id="codilar" translate="label" sortOrder="300">
+            <label>Codilar</label>
+        </tab>
+
+        <!-- SMTP Block code starts here -->
+        <section id="smtp" translate="label" type="text" sortOrder="150" showInDefault="100" showInWebsite="1" showInStore="1">
+            <label>SMTP</label>
+            <tab>codilar</tab>
+            <!-- resource tag name which we have to defined in the acl.xml -->
+            <resource>Codilar_Smtp::config_settings</resource>
+
+            <group id="smtp_block" translate="label" type="text" sortOrder="42" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>SMTP Block</label>
+                <field id="smtp_host_name" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SMTP Host</label>
+                </field>
+                <field id="smtp_authorisation" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SMTP Authorisation</label>
+                    <source_model>Codilar\Smtp\Helper\Authorisation</source_model>
+                </field>
+                <field id="smtp_ssl" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SMTP SSl Type</label>
+                    <source_model>Codilar\Smtp\Helper\SslList</source_model>
+                </field>
+                <field id="smtp_port" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>SMTP Port</label>
+                </field>
+                <field id="smtp_username" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Username</label>
+                </field>
+                <field id="smtp_password" translate="label" type="password" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                </field>
+            </group>
+
+        </section>
+        <!-- SMTP Block code ends here -->
+
+    </system>
+</config>
